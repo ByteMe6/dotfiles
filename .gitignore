@@ -1,12 +1,12 @@
 *
 
 !.gitignore
-!/fish/
-!/hypr/
-!/btop/
-!/waybar/
-!/wofi/
-!/mako/
-!/kitty/
-!/swaylock/
-!/pics/
+!fish/
+!hypr/
+!btop/
+!waybar/
+!wofi/
+!mako/
+!kitty/
+!swaylock/
+!pics/
