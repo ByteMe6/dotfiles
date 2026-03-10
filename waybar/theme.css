@@ -1,0 +1,29 @@
+/* Base border color*/
+@define-color border-main @fg-main;
+@define-color border-alt @fg-main;
+
+/* Background Colors */
+@define-color bg-main #11111B;
+@define-color bg-alt #FFD369;   /* светло-жёлтый акцент */
+@define-color bg-hover #E0C045; /* жёлтый потемнее */
+@define-color bg-hover-alt #C9A227;
+@define-color bg-tooltip @bg-main;
+@define-color bg-second #33334C;
+@define-color bg-third #FFD369;
+@define-color sway-bg @bg-main;
+
+/* text color */
+@define-color fg-main #FFF4B0;   /* мягкий жёлтоватый текст */
+@define-color fg-unactive #C9A227;
+@define-color content-act #FFE98A;
+
+/* Player colors */
+@define-color ply-main #25253B;
+@define-color ply-hover #3A3A2B;
+@define-color ply-act #5A5A2F;
+@define-color msc-act #6E6E2F;
+
+/* Wlogout */
+@define-color wlogout-hover rgba(255, 211, 105, 0.3);
+@define-color wlogout-bg rgba(17, 17, 17, 0.45);
+@define-color wlogout-button rgba(255, 211, 105, 0.6);

@@ -1,0 +1,31 @@
+sort=-time
+layer=top
+font=Roboto Mono Nerd 10   
+width=280                  
+padding=6                   
+margin=2
+outer-margin=8             
+anchor=top-right
+border-size=0
+border-radius=6
+default-timeout=5000
+ignore-timeout=1
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#89b4fa
+progress-color=over #313244
+
+[urgency=high]
+border-color=#fab387
+
+[app-name=kb-switch]
+font=Roboto Mono Nerd Bold 9 
+width=350
+padding=10
+anchor=bottom-center
+border-radius=10
+background-color=#74c7ec
+text-color=#1e1e2e
+default-timeout=1500
+outer-margin=12
+group-by=app-name

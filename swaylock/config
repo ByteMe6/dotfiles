@@ -1,0 +1,22 @@
+image=/home/byteme/pics/yellow.jpg
+scaling=fill
+color=191414
+
+indicator-radius=100
+indicator-thickness=7
+
+ring-color=fafab1
+inside-color=c8c8c8
+line-color=151515
+text-color=0a0a0a
+key-hl-color=cc8822
+bs-hl-color=cc2222
+
+ring-ver-color=fafab1
+inside-ver-color=c8c8c8
+
+ring-wrong-color=cc2222
+inside-wrong-color=c8c8c8
+
+font=Noto Sans
+font-size=20
