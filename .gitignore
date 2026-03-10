@@ -1,12 +1,17 @@
+k# 1. Ignore everything
 *
 
+# 2. Allow Git to enter directories
+!*/
+
+# 3. Specifically allow your folders and essential files
 !.gitignore
+!btop/
 !fish/
 !hypr/
-!btop/
+!kitty/
+!mako/
+!pics/
+!swaylock/
 !waybar/
 !wofi/
-!mako/
-!kitty/
-!swaylock/
-!pics/
