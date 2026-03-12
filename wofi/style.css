@@ -1,10 +1,15 @@
+scrolledwindow overshoot.top,
+scrolledwindow overshoot.bottom {
+  background: none;
+}
+
 window {
-  background-color: #1a1b26;
+  background-color: #0B0C1A;
 }
 
 * {
   font-family: "Roboto";
-  color: #fff;
+  color: #C8D6FF;
   font-weight: 700;
 }
 
@@ -13,12 +18,12 @@ window {
 }
 
 #input {
-  background-color: #1a1b26;
-  color: #c0caf5;
+  background-color: #141830;
+  color: #C8D6FF;
   outline: none;
   box-shadow: none;
   border: 0;
-  border-radius: 0;
+  border-radius: 0.25rem;
   font-size: 0.8rem;
   padding: 0.5rem;
 }
@@ -26,6 +31,7 @@ window {
 #inner-box {
   margin: 0.5rem;
   font-size: 0.8rem;
+  color: #C8D6FF;
 }
 
 #img {
@@ -37,9 +43,10 @@ window {
 }
 
 #entry:selected {
-  background-color: #fdfd96;
+  background-color: #1F223A;
   outline: none;
 }
+
 #text:selected {
-  color: #1a1b26;
+ # color: #FFFFFF;
 }
