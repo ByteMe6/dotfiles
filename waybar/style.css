@@ -320,7 +320,6 @@ tooltip label {
     margin: 0px 8px;
     border: 0px solid @border-main;
     transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
-    
 }
 /* Убираем фоны у отдельных элементов */
 #media-prev,
@@ -355,9 +354,9 @@ tooltip label {
 /* При hover группы - меняем цвет всех элементов */
 
 #mpris.paused {
-    /*color: @fg-unactive;*/
+    color: @fg-unactive;
 }
 
 #mediaPlayer {
-    background-color: @bg-second;
+   background-color: @bg-second;
 }

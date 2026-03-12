@@ -8,7 +8,7 @@
 @define-color bg-hover #5A78E6;
 @define-color bg-hover-alt #435CC7;
 @define-color bg-tooltip @bg-main;
-@define-color bg-second #181A30;   /* темнее */
+@define-color bg-second #1B1F3A;
 @define-color bg-third #27306B;
 @define-color sway-bg @bg-main;
 
