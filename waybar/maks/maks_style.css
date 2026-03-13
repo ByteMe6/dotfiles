@@ -1,0 +1,121 @@
+@import "mocha.css";
+
+* {
+  font-family: "Roboto Mono Nerd";
+  font-size: 14px;
+  min-height: 0;
+  font-weight: 600;
+}
+
+#waybar {
+  background: transparent;
+  color: @text;
+  margin: 5px 5px;
+}
+
+#workspaces {
+  border-radius: 0 1rem 1rem 0;
+  margin: 5px 0 5px 0;
+  background-color: @surface0;
+  margin-left: 1rem;
+  padding: 0 1rem;
+}
+
+#workspaces button {
+  color: @lavender;
+  border-radius: 1rem;
+  padding: 0.9rem;
+}
+
+#workspaces button:nth-child(1) {
+  padding: 0.9rem 0.9rem 0.9rem 0;
+}
+
+#workspaces button.active {
+  color: @sky;
+  border-radius: 1rem;
+}
+
+
+#workspaces button.urgent {
+  color: @pink;
+}
+
+/* #custom-music, */
+
+#tray,
+#clock,
+#battery,
+#custom-power,
+#language,
+#network,
+#wireplumber,
+#memory{
+  background-color: @surface0;
+  padding: 0.5rem 0.6rem;
+  margin: 5px 0;
+}
+
+#custom-logo {
+  color: @mauve;
+  background-color: @surface0;
+  border-radius: 1rem 0 0 1rem;
+  padding: 0 0.9rem 0 1.7rem;
+  margin: 5px -15px 5px 15px;
+  font-size: 1.2rem;
+  box-shadow: none;
+  border-right: none;
+}
+
+#language {
+  padding-left: 1rem;
+  border-radius: 1rem 0 0 1rem;
+  color: @mauve;
+}
+
+#memory {
+  color: @teal;
+}
+
+#network {
+  color: @blue;
+}
+
+#clock {
+  color: @blue;
+  border-radius: 1rem 1rem 1rem 1rem;
+  padding: 0.5rem 1.3rem;
+}
+
+#wireplumber {
+  color: @maroon;
+}
+
+#battery {
+  color: @green;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning:not(.charging) {
+  color: @red;
+}
+
+#battery {
+    border-radius: 0;
+}
+
+#custom-power {
+  margin-right: 1rem;
+  border-radius: 0px 1rem 1rem 0px;
+  color: @red;
+  padding-right: 1.7rem;
+}
+
+#tray {
+  padding: 0.5rem 1.3rem;
+  margin-right: 1rem;
+  border-radius: 1rem;
+}

@@ -1,0 +1,236 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "gtk-layer-shell": true,
+    "margin-top": 6, "margin-bottom": 0,
+    "passthrough": false,
+    "height": 0,
+
+    "modules-left": ["group/leftSide"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["tray", "group/rightSide"],
+    
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "ENG",
+        "format-ru":"RU",
+        "format-uk":"UA",
+        "on-click": "hyprctl dispatch changelayout"
+    },
+
+    "custom/search": {
+        "format": " ",
+        "tooltip": false,
+        "on-click": "wofi --show drun"
+    },
+
+    "custom/os_button": {
+        "format": "",
+        "on-click": "swaylock -i ~/pics/yellow.jpg",
+        "tooltip": false
+    },
+
+
+
+    "custom/media-play-pause": {
+        "format": " ",
+        "exec": "playerctl status --format '{{status}}' | sed 's/Playing//g; s/Paused//g; s/Stopped//g'",
+        "on-click": "playerctl play-pause",
+        "tooltip": "Play/Pause",
+        "interval": 10
+    },
+
+    "custom/media-prev": {
+        "interval": 1,
+        "format": "⏮",
+        "on-click": "playerctl previous",
+        "tooltip": "Предыдущий трек",
+        "exec": "playerctl status >/dev/null 2>&1 && echo '' || echo ''",
+    },
+
+    "custom/media-next": {
+        "interval": 1,
+        "format": "⏭",
+        "on-click": "playerctl next",
+        "tooltip": "Следующий трек",
+        "exec": "playerctl status >/dev/null 2>&1 && echo '' || echo ''",
+
+    },
+    "mpris": {
+        "format": "{dynamic}",
+        "format-paused": "{dynamic}",
+        "format-stopped": "Нет воспроизведения",
+        "dynamic-len": 30,
+        "dynamic-order": ["title", "artist"],
+        "dynamic-separator": " - ",
+        "tooltip": true,
+        "tooltip-format": "{player}\n{dynamic}\n{position}/{length}",
+        "max-length": 30
+    },
+
+
+    "network": {
+        "format-wifi": "{icon} {essid}",
+        "max-length": 28,
+        "format-ethernet": " ",
+        "format-disconnected": "󰌙 ",
+        "tooltip-format": "{icon} {essid}",
+        "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
+        "on-click": "bash ~/.config/hypr/scripts/actioncenter.sh & eww close calendar-window music-center-window",
+        "on-click-right": "bash .config/hypr/scripts/rofiwifi.sh"
+        },
+
+    "bluetooth": {
+        "format": "",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "blueman-manager"
+    },
+
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": " ",
+            "performance": " ",
+            "balanced": " ",
+            "power-saver": " "
+        }
+    },
+
+    "battery": {
+        "on-click": "bash ~/.config/hypr/scripts/actioncenter.sh & eww close calendar-window music-center-window",
+        "states": {"good": 95, "warning": 30, "critical": 20},
+        "format": "{icon} {capacity}%",
+        "format-charging": " ",
+        "format-plugged": " ",
+        "format-alt": "{time} {icon}",
+        "format-alt-icons": [
+            "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+        ],
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+
+    "pulseaudio": {
+        "max-volume": 150,
+        "scroll-step": 10,
+        "format": "{icon} {volume}%",
+        "tooltip-format": "{icon} ",
+        "format-icons": {
+            "headphone": " ",
+            "format-muted": " ",
+            "default": [" ", "  "]
+        },
+        "menu": "",
+        "menu-file": "~/.config/waybar/volume_menu.xml",
+        "menu-actions": {
+            "ToggleSound": "pamixer -t&",
+            "pavu": "nohup foot --override=colors.alpha=1 --app-id=Wiremix -e wiremix >/dev/null 2>&1 &"
+        }
+},
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "tooltip-format": "{icon} {percent}%",
+        "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "],
+        "on-click": "bash ~/.config/hypr/scripts/actioncenter.sh & eww close calendar-window music-center-window"
+    },
+
+
+    "hyprland/workspaces": {
+        "format":"{icon}",
+        "icon-size": 32,
+        "spacing": 16,
+        "on-scroll-up": "hyprctl dispatch workspace r+1",
+        "on-scroll-down": "hyprctl dispatch workspace r-1",
+        "persistent-workspaces": { "*": 4 },
+        "format-icons": {
+            "urgent": "",
+            "sort-by-number": true
+        }
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon} {title:.18}",
+        "icon-size": 18,
+        "spacing": 3,
+        "on-click-middle": "close",
+        "tooltip-format": "{title}",
+        "ignore-list": [],
+        "on-click": "activate"
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 8
+    },
+
+    "clock": {
+        "format": "  {:%R}",
+        "tooltip-format": " {:%d %B %Y}",
+        "on-click": "eww open calendar-window --toggle & eww close quick-center-window music-center-window"
+    },
+
+    "memory": {
+        "format": "󰍛 {}%",
+        "format-alt": "󰍛 {used}/{total} GiB",
+        "interval": 5
+    },
+
+    "cpu": {
+        "format": "󰻠 {usage}%",
+        "format-alt": "󰻠 {avg_frequency} GHz",
+        "interval": 5
+    },
+
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": ["memory", "cpu"]
+    },
+
+    "group/controlCenter": {
+        "orientation": "horizontal",
+        "modules": [
+            "pulseaudio",
+            "network",
+            
+            "backlight"
+        ]
+    },
+
+
+"group/mediaPlayer": {
+    "orientation": "horizontal",
+    "modules": [
+        "custom/media-prev",
+        "mpris",
+        "custom/media-play-pause", 
+        "custom/media-next"
+    ]
+},
+
+    
+    "group/leftSide": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/search",
+            "custom/runner",
+            "custom/os_button",
+            "group/mediaPlayer",
+            "group/hardware"
+        ]
+    },
+
+    "group/rightSide": {
+        "orientation": "horizontal",
+        "modules": ["group/controlCenter", "battery","hyprland/language", "clock"]
+    }
+}
