@@ -191,9 +191,15 @@
         "interval": 5
     },
 
+   "custom/gpu": {
+    "exec": "cat /sys/class/drm/card1/device/gpu_busy_percent",
+    "format": "󰢮 {}%",
+    "interval": 5
+   },
+
     "group/hardware": {
         "orientation": "horizontal",
-        "modules": ["memory", "cpu"]
+        "modules": ["memory", "cpu", "custom/gpu"]
     },
 
     "group/controlCenter": {
