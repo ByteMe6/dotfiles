@@ -28,3 +28,8 @@ for event in dev.read_loop():
             case evdev.ecodes.BTN_EAST:
                 if not is_fullscreen():
                     subprocess.run(['pkill', 'wofi'])
+            case evdev.ecodes.BTN_MODE:
+                if event.value == 1:  # Срабатывает только при нажатии (value 1)
+                    if not is_fullscreen():
+                        # -tenfoot запускает Steam сразу в режиме Big Picture
+                        subprocess.run(['steam', '-tenfoot'])
