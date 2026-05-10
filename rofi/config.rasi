@@ -1,0 +1,128 @@
+/* LAUNCHPAD */
+
+configuration {
+    show-icons:          true;
+    icon-theme:          "Papirus";
+    drun-display-format: "{name}";
+    disable-history:     false;
+    modi:                "drun,calc,filebrowser,window";
+    display-drun:        "Apps";
+    display-calc:        "Calc";
+    display-filebrowser: "Files";
+    display-window:      "Windows";
+}
+
+* {
+    font:             "SF Pro Display 10";
+    bg0:              #00000066;
+    bg2:              #ffffff14;
+    bg3:              #ffffff28;
+    bg4:              #0860f2cc;
+    fg0:              #ffffff;
+    fg1:              #ffffff60;
+    background-color: transparent;
+    text-color:       @fg0;
+    padding:          0px;
+    margin:           0px;
+}
+
+window {
+    fullscreen:       true;
+    background-color: @bg0;
+}
+
+mainbox {
+    padding:  80px 0px 0px 0px;
+    spacing:  24px;
+    children: [inputbar, message, mode-switcher, listview];
+}
+
+inputbar {
+    background-color: @bg2;
+    margin:           0px calc(50% - 200px);
+    padding:          12px 18px;
+    spacing:          10px;
+    border:           1px;
+    border-radius:    14px;
+    border-color:     @bg3;
+    children:         [icon-search, entry];
+}
+
+prompt { enabled: false; }
+
+icon-search {
+    expand:         false;
+    filename:       "search";
+    vertical-align: 0.5;
+    size:           1em;
+    text-color:     @fg1;
+}
+
+entry {
+    placeholder:       "Search...";
+    placeholder-color: @fg1;
+    text-color:        @fg0;
+}
+
+mode-switcher {
+    spacing:          8px;
+    margin:           0px calc(50% - 160px);
+}
+
+button {
+    padding:          6px 18px;
+    border-radius:    20px;
+    background-color: @bg2;
+    text-color:       @fg1;
+    cursor:           pointer;
+    border:           1px;
+    border-color:     transparent;
+}
+
+button selected {
+    background-color: @bg4;
+    text-color:       @fg0;
+    border-color:     @bg4;
+}
+
+listview {
+    margin:           40px calc(50% - 500px);
+    spacing:          28px;
+    columns:          6;
+    fixed-columns:    true;
+    flow:             horizontal;
+    lines:            4;
+}
+
+element, element-text, element-icon {
+    cursor: pointer;
+}
+
+element {
+    padding:          12px 8px;
+    spacing:          8px;
+    orientation:      vertical;
+    border-radius:    18px;
+    background-color: transparent;
+}
+
+element selected {
+    background-color: @bg4;
+}
+
+element-icon {
+    size:             3.2em;
+    horizontal-align: 0.5;
+}
+
+element-text {
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+    font:             "SF Pro Display 9";
+}
+
+message {
+    enabled: false;
+}
+
+scrollbar { width: 0px; }
