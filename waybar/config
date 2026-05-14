@@ -121,7 +121,6 @@
     ]
   },
 "pulseaudio": {
-    "scroll-step": 5,
     "format": "{icon} {volume}%",
     "format-muted": "󰝟 {volume}%",
     "format-icons": {
@@ -131,18 +130,10 @@
         "phone": "",
         "portable": "",
         "car": "",
-        "default": [
-            "", 
-            "", 
-            "󰕾", 
-            "󰕾", 
-            "", 
-            "", 
-            ""
-        ]
+        "default": ["", "", ""]
     },
     "on-click": "pavucontrol",
-    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    "scroll-step": 5
 },
   "backlight": {
     "device": "intel_backlight",
@@ -171,7 +162,7 @@
       "*": 4
     },
     "format-icons": {
-      "urgent": "",
+      "urgent": "!",
       "sort-by-number": true
     }
   },
