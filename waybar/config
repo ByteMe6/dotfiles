@@ -34,8 +34,17 @@
   "custom/search": {
     "format": " ",
     "tooltip": false,
-    "on-click": "wofi --show drun"
+    "on-click": "rofi -show drun"
   },
+
+"custom/brightness-eww": {
+    "format": "<span size='xx-large'>☀</span>",
+    "markup": "pango",
+    "tooltip": false,
+    "on-click": "~/.config/eww/scripts/brightness-toggle.sh"
+},
+
+
   "custom/media-play-pause": {
     "interval": 1,
     "format": "{}",
@@ -122,7 +131,7 @@
   },
 "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-muted": "󰝟 {volume}%",
+    "format-muted": "󰝟  {volume}%",
     "format-icons": {
         "headphone": "",
         "hands-free": "",
@@ -159,7 +168,7 @@
     "on-scroll-up": "hyprctl dispatch workspace r+1",
     "on-scroll-down": "hyprctl dispatch workspace r-1",
     "persistent-workspaces": {
-      "*": 4
+      "*": [1, 2, 3, 4]
     },
     "format-icons": {
       "urgent": "!",
@@ -218,6 +227,7 @@
     "orientation": "horizontal",
     "modules": [
       "custom/search",
+      "custom/brightness-eww",
       "custom/runner",
       "group/mediaPlayer",
       "group/hardware"

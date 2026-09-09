@@ -1,0 +1,17 @@
+(defpoll brightness :interval "1h"
+                    "~/.config/eww/scripts/brightness-get.sh")
+
+(defwidget brightness-window []
+  (box :class "brightness-box" :orientation "v" :space-evenly false :spacing 8
+    (label :text "Яркость: ${round(brightness, 0)}%")
+    (scale :min 0
+           :max 105
+           :value brightness
+           :onchange "~/.config/eww/scripts/brightness.sh {}"
+           :class "brightness-scale")))
+
+(defwindow brightness
+  :monitor 0
+  :geometry (geometry :x "10px" :y "5px" :width "300px" :height "70px" :anchor "top left")
+  :stacking "fg"
+  (brightness-window))
