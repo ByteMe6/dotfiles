@@ -1,13 +1,23 @@
-*
+# Allowlist: ignore everything at the top level, then re-add what we track.
+# NOTE: the pattern is "/*", not "*" — "*" matches at every depth, so it would
+# re-ignore the contents of every directory re-added below.
+/*
 
 !.gitignore
+!README.md
+!DEPENDENCIES.md
+
 !btop/
+!controller-wofi.py
+!eww/
+!fastfetch/
 !fish/
 !hypr/
 !kitty/
 !mako/
+!matugen/
 !pics/
+!rofi/
 !swaylock/
 !waybar/
 !wofi/
-!fastfetch/
