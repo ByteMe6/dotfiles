@@ -1,3 +1,5 @@
+@import "colors.rasi"
+
 configuration {
     show-icons:          true;
     icon-theme:          "Papirus";
@@ -12,11 +14,8 @@ configuration {
 
 * {
     font:             "Montserrat 10";
-    bg0:              #111111f0;
-    bg2:              #1e1e1e;
-    bg3:              #2e2e2e;
     background-color: transparent;
-    text-color:       #eeeeee;
+    text-color:       @fg-main;
     padding:          0px;
     margin:           0px;
 }
@@ -24,9 +23,9 @@ configuration {
 window {
     width:            620px;
     border-radius:    14px;
-    background-color: @bg0;
+    background-color: @bg-window;
     border:           1px;
-    border-color:     @bg3;
+    border-color:     @bd-main;
     location:         north;
     y-offset:         80px;
 }
@@ -38,12 +37,12 @@ mainbox {
 }
 
 inputbar {
-    background-color: @bg2;
+    background-color: @bg-input;
     padding:          10px 14px;
     spacing:          8px;
     border:           1px;
     border-radius:    10px;
-    border-color:     @bg3;
+    border-color:     @bd-main;
     children:         [icon-search, entry];
 }
 
@@ -54,13 +53,13 @@ icon-search {
     filename:       "search";
     vertical-align: 0.5;
     size:           1em;
-    text-color:     #888888;
+    text-color:     @fg-dim;
 }
 
 entry {
     placeholder:       "Search apps, calc, files...";
-    placeholder-color: #666666;
-    text-color:        #eeeeee;
+    placeholder-color: @fg-faint;
+    text-color:        @fg-main;
 }
 
 mode-switcher {
@@ -70,17 +69,17 @@ mode-switcher {
 button {
     padding:          4px 14px;
     border-radius:    16px;
-    background-color: @bg2;
-    text-color:       #888888;
+    background-color: @bg-input;
+    text-color:       @fg-dim;
     cursor:           pointer;
     border:           1px;
-    border-color:     @bg3;
+    border-color:     @bd-main;
 }
 
 button selected {
-    background-color: #eeeeee;
-    text-color:       #111111;
-    border-color:     #eeeeee;
+    background-color: @accent;
+    text-color:       @on-accent;
+    border-color:     @accent;
 }
 
 listview {
@@ -103,19 +102,23 @@ element {
 }
 
 element normal normal {
-    background-color: #222222;
+    background-color: @bg-element;
+    text-color:       @fg-main;
 }
 
 element normal active {
-    background-color: #222222;
+    background-color: @bg-element;
+    text-color:       @fg-main;
 }
 
 element selected normal {
-    background-color: #383838;
+    background-color: @accent;
+    text-color:       @on-accent;
 }
 
 element selected active {
-    background-color: #383838;
+    background-color: @accent;
+    text-color:       @on-accent;
 }
 
 element-icon {
@@ -125,26 +128,28 @@ element-icon {
 
 element-text {
     vertical-align: 0.5;
-    text-color:     #eeeeee;
+    text-color:     inherit;
 }
 
 element alternate normal {
-    background-color: #222222;
+    background-color: @bg-element;
+    text-color:       @fg-main;
 }
 
 element alternate active {
-    background-color: #222222;
+    background-color: @bg-element;
+    text-color:       @fg-main;
 }
 
 
 message {
     padding:          8px 10px;
     border-radius:    8px;
-    background-color: @bg2;
+    background-color: @bg-input;
     border:           1px;
-    border-color:     @bg3;
+    border-color:     @bd-main;
 }
 
 textbox {
-    text-color: #eeeeee;
+    text-color: @fg-main;
 }

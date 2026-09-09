@@ -1,11 +1,72 @@
 // ~/.config/eww/eww.scss
+@import "colors";
 
+* {
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font";
+  font-weight: 700;
+  font-size: 12.5px;
+}
+
+.brightness-window {
+  background-color: transparent;
+}
+
+// Mirrors waybar's #leftSide / #rightSide island.
 .brightness-box {
-  background-color: rgba(30, 30, 46, 0.9);
-  padding: 12px;
+  background: $bg-main;
+  border: 1px solid $border-main;
+  border-radius: 14px;
+  padding: 10px 14px;
+  color: $fg-main;
+}
+
+.brightness-icon {
+  font-family: "Symbols Nerd Font", "JetBrainsMono Nerd Font";
+  font-size: 15px;
+  color: $fg-main;
+}
+
+.brightness-title {
+  color: $fg-unactive;
+  font-size: 12.5px;
+}
+
+.brightness-value {
+  color: $fg-main;
+  font-size: 13px;
+  background: $bg-second;
   border-radius: 10px;
+  padding: 1px 8px;
 }
 
 .brightness-scale {
-  min-height: 20px;
+  padding: 0px 2px;
+
+  trough {
+    background: $bg-third;
+    border: 1px solid $border-main;
+    border-radius: 10px;
+    min-height: 10px;
+
+    highlight {
+      background: $accent;
+      border-radius: 10px;
+      min-height: 10px;
+    }
+  }
+
+  slider {
+    background: $fg-main;
+    border: 1px solid $border-main;
+    border-radius: 10px;
+    min-height: 16px;
+    min-width: 16px;
+    margin: -4px;
+  }
+
+  &:hover slider {
+    background: $accent;
+    border-color: $border-alt;
+  }
 }
