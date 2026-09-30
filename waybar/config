@@ -94,7 +94,7 @@
       "󰤢 ",
       "󰤨 "
     ],
-    "on-click": "bash ~/.config/hypr/scripts/actioncenter.sh",
+    "on-click": "~/.config/eww/scripts/wifi-toggle.sh",
     "on-click-right": "bash ~/.config/hypr/scripts/rofiwifi.sh"
   },
   "battery": {

@@ -70,3 +70,65 @@
     border-color: $border-alt;
   }
 }
+
+// Wi-Fi list window, same island look as the brightness popup.
+.wifi-box {
+  background: $bg-main;
+  border: 1px solid $border-main;
+  border-radius: 14px;
+  padding: 10px 14px;
+  color: $fg-main;
+}
+
+.wifi-header-icon {
+  font-family: "Symbols Nerd Font", "JetBrainsMono Nerd Font";
+  font-size: 15px;
+}
+
+.wifi-title {
+  color: $fg-unactive;
+}
+
+.wifi-refresh {
+  background: $bg-second;
+  border-radius: 10px;
+  padding: 1px 8px;
+
+  &:hover {
+    color: $accent;
+  }
+}
+
+.wifi-item {
+  background: $bg-second;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  padding: 6px 10px;
+
+  &:hover {
+    background: $bg-hover;
+    border-color: $border-main;
+  }
+
+  &.active {
+    border-color: $border-alt;
+
+    .wifi-icon, .wifi-ssid {
+      color: $accent;
+    }
+  }
+}
+
+.wifi-icon {
+  font-family: "Symbols Nerd Font", "JetBrainsMono Nerd Font";
+  font-size: 14px;
+}
+
+.wifi-lock {
+  color: $fg-unactive;
+}
+
+.wifi-signal {
+  color: $fg-unactive;
+  font-size: 11.5px;
+}

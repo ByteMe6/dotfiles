@@ -18,3 +18,31 @@
   :geometry (geometry :x "6px" :y "6px" :width "300px" :anchor "top left")
   :stacking "fg"
   (brightness-window))
+
+(defvar wifi_networks "[]")
+
+(defwidget wifi-window []
+  (box :class "wifi-box" :orientation "v" :space-evenly false :spacing 8
+    (box :orientation "h" :space-evenly false :spacing 8
+      (label :class "wifi-header-icon" :text "󰤨")
+      (label :class "wifi-title" :text "Wi-Fi" :hexpand true :halign "start")
+      (button :class "wifi-refresh"
+              :onclick "eww update wifi_networks=\"$(~/.config/eww/scripts/wifi-list.sh)\""
+              "󰑐"))
+    (scroll :vscroll true :hscroll false :height 320
+      (box :orientation "v" :space-evenly false :spacing 4
+        (for net in wifi_networks
+          (button :class "wifi-item ${net.active ? 'active' : ''}"
+                  :onclick "~/.config/eww/scripts/wifi-connect.sh '${replace(net.ssid, "'", "'\\\\''")}' &"
+            (box :orientation "h" :space-evenly false :spacing 8
+              (label :class "wifi-icon" :text "${net.icon}")
+              (label :class "wifi-ssid" :text "${net.ssid}" :limit-width 24
+                     :hexpand true :halign "start")
+              (label :class "wifi-lock" :text "${net.secure ? '󰌾' : ''}")
+              (label :class "wifi-signal" :text "${net.signal}%"))))))))
+
+(defwindow wifi
+  :monitor 0
+  :geometry (geometry :x "6px" :y "6px" :width "300px" :anchor "top right")
+  :stacking "fg"
+  (wifi-window))
